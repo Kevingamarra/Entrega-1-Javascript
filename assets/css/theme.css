@@ -565,3 +565,8 @@ h2, .h2, .section-title {
 .welcome-modal .form-control.is-invalid{
   border-color:#d71d5c;box-shadow:0 0 0 .2rem rgba(215,29,92,.15)
 }
+/* Bienvenida */
+.welcome-modal .modal-dialog { max-width: 560px; }
+.welcome-modal .modal-content { border-radius: 20px; }
+.welcome-modal .modal-body p { line-height: 1.55; }
+

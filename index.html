@@ -417,35 +417,39 @@
   })();
   </script>
 
-  <!-- Modal de bienvenida  -->
-  <div class="modal fade welcome-modal" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg">
-        <div class="modal-header border-0 pb-0">
-          <div class="d-flex align-items-center gap-2">
-            <img src="assets/img/logo.png" alt="Pura Belleza" height="40" style="border-radius:8px;">
-            <h2 class="h5 mb-0" id="welcomeTitle">💄 ¡Bienvenida/o a Pura Belleza!</h2>
-          </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
+  <!-- Modal de bienvenida (titulo centrado debajo del logo) -->
+<div class="modal fade welcome-modal" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
 
-        <div class="modal-body pt-2">
-          <p class="mb-3 text-muted">
-            Un universo de cosmética, fragancias y bienestar te espera. 💋<br>
-            Descubrí productos que realzan tu belleza natural y te hacen brillar cada día.
-          </p>
+      <!-- header: solo botón cerrar -->
+      <div class="modal-header border-0 pb-0 justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
 
-          <label for="welcomeName" class="form-label small fw-semibold">Tu nombre</label>
-          <input id="welcomeName" class="form-control" placeholder="Ej: Sofía" aria-describedby="welcomeHelp" required>
-          <div id="welcomeHelp" class="form-text">Lo usamos para personalizar tu experiencia.</div>
-        </div>
+      <div class="modal-body pt-0 text-center">
+        <!-- logo grande -->
+        <img src="assets/img/logo.png" alt="Pura Belleza" width="240" height="240" class="img-fluid mb-3" style="max-width: 240px;">
 
-        <div class="modal-footer border-0 pt-0">
-          <button id="welcomeStart" type="button" class="btn btn-brand w-100">Empezar</button>
-        </div>
+        <!-- título centrado -->
+        <h2 id="welcomeTitle" class="h4 mb-2">💄 ¡Bienvenida/o a Pura Belleza!</h2>
+
+        <p class="mb-3 text-muted">
+          Un universo de cosmética, fragancias y bienestar te espera. 💋<br>
+          Descubrí productos que realzan tu belleza natural y te hacen brillar cada día.
+        </p>
+
+        <label for="welcomeName" class="form-label small fw-semibold">Tu nombre</label>
+        <input id="welcomeName" class="form-control mx-auto" style="max-width:420px" placeholder="Ej: Sofía" aria-describedby="welcomeHelp" required>
+        <div id="welcomeHelp" class="form-text">Lo usamos para personalizar tu experiencia.</div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button id="welcomeStart" type="button" class="btn btn-brand w-100">Empezar</button>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Inicialización del modal -->
   <script>
