@@ -1,0 +1,63 @@
+/* ---Bridge a Swiper ---- */
+
+/* contenedor y flechas */
+.carousel-row{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .5rem;
+  align-items: center;
+
+  .carousel-btn{
+    border: 1px solid $brand-1;
+    background: #fff;
+    color: $brand-1;
+    @include circle($btn-h);
+    @include smooth(transform, .2s);
+    cursor: pointer;
+
+    &:focus-visible{
+      outline: 3px solid rgba($brand-3, .35);
+      outline-offset: 2px;
+    }
+
+    &:disabled { opacity: .35; cursor: default; }
+    &:active   { transform: scale(.96); }
+  }
+}
+
+/* El track será .products-row.swiper con .swiper-wrapper dentro */
+.products-row {
+  /* APAGAMOS el modo scroll-snap manual */
+  overflow: visible;
+  scroll-snap-type: none;
+  overscroll-behavior-x: auto;
+  padding: 0;
+
+  /* Layout Swiper */
+  &.swiper {
+    width: 100%;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    gap: 1rem;                    
+  }
+
+  /* Cada tarjeta  es .swiper-slide  */
+  .swiper-slide {
+    width: auto;              
+  }
+}
+
+/* Equivalentes responsivos a “auto-columns”  */
+@media (max-width: 575.98px) {
+  .products-row .swiper-slide { min-width: 78vw; }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .products-row .swiper-slide { min-width: 44vw; }
+}
+@media (min-width: 992px) {
+  .products-row .swiper-slide { min-width: 260px; max-width: 300px; } 
+}
+

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pura Belleza - Cosméticos</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Pura Belleza — Cosméticos, perfumería, maquillaje y regalos. Belleza que conecta.">
+  <meta name="keywords" content="cosmética, maquillaje, perfumes, natura, pura belleza, regalos, cuidados diarios">
+  <meta name="author" content="Pura Belleza">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://naturaconsultoriaok.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Pura Belleza">
+  <meta property="og:title" content="Pura Belleza — Cosméticos y Perfumería">
+  <meta property="og:description" content="Descubrí perfumes, maquillaje, regalos y cuidados diarios.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://naturaconsultoriaok.com/">
+  <meta property="og:image" content="https://naturaconsultoriaok.com/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pura Belleza — Cosméticos y Perfumería">
+  <meta name="twitter:description" content="Tu mundo de cosmética y perfumería.">
+  <meta name="twitter:image" content="https://naturaconsultoriaok.com/assets/img/og-cover.jpg">
+
+  <!-- Color navegador -->
+  <meta name="theme-color" content="#d71d5c">
+
+  <!-- Performance: conexiones y recursos críticos -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <link rel="preload" as="image" href="assets/img/poster.jpg" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="video" href="assets/video/Video-principal.mp4" type="video/mp4">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-32.png">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pura Belleza",
+    "url": "https://naturaconsultoriaok.com/",
+    "logo": "https://naturaconsultoriaok.com/assets/img/logo.png"
+  }
+  </script>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Tipografía Natura -->
+  <link href="https://cdn.jsdelivr.net/npm/@naturacosmeticos/natds-themes@latest/dist/assets/natura_fonts.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/theme.css?v=15">
+  <link rel="stylesheet" href="assets/css/layout.css?v=2">
+  <link rel="stylesheet" href="assets/css/components.css?v=9">
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 p-2 bg-white rounded shadow-sm" href="#inicio">
+    Saltar al contenido
+  </a>
+
+  <!-- NAVBAR -->
+  <header class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio" aria-label="Ir al inicio">
+        <img src="assets/img/logo.png" alt="Pura Belleza" height="40" class="me-2">
+        Pura Belleza
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#perfumeria">Perfumería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cuidados">Cuidados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#maquillaje">Maquillaje</a></li>
+          <li class="nav-item"><a class="nav-link" href="#regalos">Regalos</a></li>
+        </ul>
+
+        <!-- Buscador -->
+        <form class="d-flex ms-lg-3 mt-3 mt-lg-0" role="search" aria-label="Buscar productos">
+          <input class="form-control me-2" id="searchProducts" type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+          <button class="btn btn-outline-brand" type="submit" aria-label="Buscar">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <!-- Carrito -->
+        <button class="btn btn-brand ms-2 ms-lg-3 mt-3 mt-lg-0"
+                data-bs-toggle="offcanvas" data-bs-target="#carrito"
+                aria-controls="carrito" aria-label="Abrir carrito">
+          <i class="bi bi-cart" aria-hidden="true"></i>
+          <span id="cartBadge" class="badge bg-light text-dark rounded-pill ms-1">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO video -->
+    <section class="hero-video position-relative mb-4">
+      <div class="container-fluid p-0">
+        <div class="video-wrap overlay-on">
+          <video autoplay muted loop playsinline preload="metadata"
+            poster="assets/img/poster.jpg" aria-label="Video de portada">
+            <source src="assets/video/Video-principal.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Texto debajo -->
+<section class="text-center py-4 bg-light">
+  <div class="container">
+    <h1 class="fw-semibold animate-fade-wiggle-x-infinite anim-force no-anim">
+      Pura Belleza
+    </h1>
+    <p class="lead mb-0 animate-fade-wiggle anim-delay-06 anim-force no-anim">
+      Tu mundo de cosmética y perfumería
+    </p>
+  </div>
+</section>
+
+    <!-- PERFUMERÍA -->
+    <section id="perfumeria" class="container py-5">
+      <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Perfumería</h2>
+
+      <!-- Filtros -->
+      <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Filtrar por subcategoría">
+        <button type="button" class="btn btn-outline-brand btn-sm active" data-subcat="*" aria-pressed="true">Todas</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Kaiak" aria-pressed="false">Kaiak</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Essencial" aria-pressed="false">Essencial</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Kriska" aria-pressed="false">Kriska</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Luna" aria-pressed="false">Luna</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Humor" aria-pressed="false">Humor</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Homem" aria-pressed="false">Homem</button>
+        <button type="button" class="btn btn-outline-brand btn-sm" data-subcat="Frescor" aria-pressed="false">Frescor</button>
+      </div>
+
+      <!-- Filtro aroma -->
+      <div class="dropdown mb-4" id="aromaMenu">
+        <button class="btn btn-outline-brand btn-sm dropdown-toggle"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                aria-haspopup="true" aria-controls="menuAroma">
+          Aroma
+        </button>
+        <ul id="menuAroma" class="dropdown-menu" role="menu" aria-label="Elegir aroma">
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="*">Todos</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Acuático">Acuático</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Floral">Floral</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Amaderado">Amaderado</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Frutal">Frutal</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Especiado">Especiado</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Oriental">Oriental</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Dulce">Dulce</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Intenso">Intenso</button></li>
+          <li role="none"><button type="button" class="dropdown-item" role="menuitem" data-aroma="Cítrico">Cítrico</button></li>
+        </ul>
+      </div>
+
+      <!-- Productos dinámicos -->
+      <div id="perfumeria-groups" aria-live="polite"></div>
+    </section>
+
+    <!-- CUIDADOS -->
+    <section id="cuidados" class="container py-5">
+      <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Cuidados diarios</h2>
+      <div class="carousel-row">
+        <button class="carousel-btn prev" data-target="row-cuidados" aria-label="Anterior cuidados" aria-controls="row-cuidados">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-row" id="row-cuidados"
+             role="region" aria-roledescription="carousel" aria-label="Carrusel de Cuidados">
+        </div>
+
+        <button class="carousel-btn next" data-target="row-cuidados" aria-label="Siguiente cuidados" aria-controls="row-cuidados">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- MAQUILLAJE -->
+    <section id="maquillaje" class="container py-5">
+      <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Maquillaje</h2>
+      <div class="carousel-row">
+        <button class="carousel-btn prev" data-target="row-maquillaje" aria-label="Anterior maquillaje" aria-controls="row-maquillaje">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-row" id="row-maquillaje"
+             role="region" aria-roledescription="carousel" aria-label="Carrusel de Maquillaje">
+        </div>
+
+        <button class="carousel-btn next" data-target="row-maquillaje" aria-label="Siguiente maquillaje" aria-controls="row-maquillaje">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- REGALOS -->
+    <section id="regalos" class="container py-5">
+      <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Regalos</h2>
+      <div class="carousel-row">
+        <button class="carousel-btn prev" data-target="row-regalos" aria-label="Anterior regalos" aria-controls="row-regalos">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-row" id="row-regalos"
+             role="region" aria-roledescription="carousel" aria-label="Carrusel de Regalos">
+        </div>
+
+        <button class="carousel-btn next" data-target="row-regalos" aria-label="Siguiente regalos" aria-controls="row-regalos">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- INFO / AYUDA / SOPORTE -->
+  <section class="container-fluid py-5 info-section border-top">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Izquierda -->
+        <div class="col-12 col-lg-6 text-lg-start">
+          <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Encontrá Natura</h2>
+          <p class="mb-3 animate-fadeUp" style="animation-delay:.06s">
+            Podés comprar con Consultoras de Belleza, en Tiendas, en el sitio naturacosmeticos.com.ar,
+            solicitar regalos corporativos o usar la app.
+          </p>
+          <h3 class="h5 animate-fadeUp" style="animation-delay:.12s">Alertas y retiro de productos</h3>
+          <p class="mb-0 animate-fadeUp" style="animation-delay:.18s">
+            Al día de la última comunicación pública, no hay productos bajo procesos de Alerta y Retiro.
+          </p>
+        </div>
+
+        <!-- Derecha -->
+        <div class="col-12 col-lg-6 text-lg-end">
+          <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Soporte</h2>
+          <h3 class="h5 animate-fadeUp" style="animation-delay:.06s">Políticas de privacidad</h3>
+          <p class="mb-3 animate-fadeUp" style="animation-delay:.12s">
+            Natura &amp;Co informa cómo recopila, usa y protege datos personales; el aviso y la política pueden actualizarse periódicamente.
+          </p>
+          <h3 class="h5 animate-fadeUp" style="animation-delay:.18s">Política de cookies</h3>
+          <p class="mb-0 animate-fadeUp" style="animation-delay:.24s">
+            Se describen categorías de cookies y tecnologías similares; cuando son datos personales se tratan conforme la política de privacidad.
+          </p>
+        </div>
+      </div>
+
+      <!-- Medios de pago -->
+      <div class="text-center medios-de-pago mt-5">
+        <h2 class="section-title wow animate__animated animate__fadeInUp" data-wow-offset="80">Medios de pago</h2>
+        <img src="assets/img/medios-de-pago.png" alt="Medios de pago aceptados"
+             class="img-fluid pay-logos animate-fadeUp"
+             style="animation-delay:.06s"
+             loading="lazy" decoding="async">
+        <p class="small text-muted animate-fadeUp" style="animation-delay:.12s">
+          Aceptamos tarjetas de crédito, débito y medios electrónicos a través de Mercado Pago.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFCANVAS CARRITO -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="carrito" aria-labelledby="carritoLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="carritoLabel">Carrito de compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group" id="cartItems" aria-live="polite"></ul>
+
+      <div class="mt-3 d-flex justify-content-between">
+        <span>Total:</span> <span id="cartTotal">$0</span>
+      </div>
+
+      <!-- Datos del cliente -->
+      <div class="mt-3">
+        <label class="form-label small mb-1" for="clienteNombre">Nombre</label>
+        <input id="clienteNombre" class="form-control" placeholder="Tu nombre" required aria-required="true">
+      </div>
+
+      <div class="mt-3">
+        <label class="form-label small mb-1" for="metodoEnvio">Método de envío</label>
+        <select id="metodoEnvio" class="form-select" aria-label="Elegir método de envío">
+          <option value="retiro">Retiro en domicilio del vendedor</option>
+          <option value="andreani">Envío a domicilio (Andreani)</option>
+        </select>
+      </div>
+
+      <!-- Dirección (solo si elige Andreani) -->
+      <div id="bloqueDireccion" class="mt-3 d-none">
+        <div class="row g-2">
+          <div class="col-12">
+            <label class="form-label small mb-1" for="dirCalle">Calle y número</label>
+            <input id="dirCalle" class="form-control" placeholder="Ej: Av. Siempre Viva 742">
+          </div>
+          <div class="col-6">
+            <label class="form-label small mb-1" for="dirCiudad">Ciudad</label>
+            <input id="dirCiudad" class="form-control" placeholder="Ej: CABA">
+          </div>
+          <div class="col-6">
+            <label class="form-label small mb-1" for="dirProvincia">Provincia</label>
+            <input id="dirProvincia" class="form-control" placeholder="Ej: Buenos Aires">
+          </div>
+          <div class="col-6">
+            <label class="form-label small mb-1" for="dirCP">Código Postal</label>
+            <input id="dirCP" class="form-control" placeholder="Ej: 1406">
+          </div>
+          <div class="col-6">
+            <label class="form-label small mb-1" for="dirNotas">Referencias (opcional)</label>
+            <input id="dirNotas" class="form-control" placeholder="Piso, dpto, entre calles...">
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 d-grid gap-2">
+        <button id="btnCheckout" class="btn btn-brand" aria-label="Finalizar compra">Finalizar compra</button>
+        <button id="btnClearCart" class="btn btn-outline-secondary" aria-label="Vaciar carrito">Vaciar carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 bg-light mt-0">
+    <p class="mb-0">© 2025 Pura Belleza. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/message/7RVH5VNLVO7GP1" target="_blank" rel="noopener" aria-label="WhatsApp Pura Belleza">
+    <i class="bi bi-whatsapp fs-3" aria-hidden="true"></i>
+  </a>
+
+<!-- Botón flotante del carrito -->
+<button id="floatingCartBtn" class="cart-float" data-bs-toggle="offcanvas" data-bs-target="#carrito" aria-label="Abrir carrito">
+  <i class="bi bi-cart-fill"></i>
+  <span id="floatingCartCount">0</span>
+</button>
+
+
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+    defer
+  ></script>
+
+  <!-- WOW.js  -->
+  <script defer src="https://cdn.jsdelivr.net/npm/wowjs@1/dist/wow.min.js"></script>
+
+  <!-- Swiper JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- App -->
+<script defer src="assets/js/app.js"></script>
+
+<script>
+(function(){
+  var isMobile = (window.matchMedia && (
+    matchMedia('(max-width: 575.98px)').matches ||
+    matchMedia('(hover: none) and (pointer: coarse)').matches
+  ));
+  if (!isMobile) return;
+
+  var v = document.querySelector('.hero-video video');
+  if (!v) return;
+
+  v.muted = true; v.setAttribute('muted','');
+  v.autoplay = true; v.setAttribute('autoplay','');
+  v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+
+  var tryPlay = function(){ v.play().catch(function(){}); };
+
+  if (v.readyState >= 2) { tryPlay(); }
+  else { v.addEventListener('loadeddata', tryPlay, { once:true }); }
+
+  var unlock = function(){ tryPlay(); cleanup(); };
+  var cleanup = function(){
+    window.removeEventListener('touchstart', unlock, { passive:true });
+    window.removeEventListener('click', unlock);
+  };
+  window.addEventListener('touchstart', unlock, { once:true, passive:true });
+  window.addEventListener('click', unlock, { once:true });
+})();
+</script>
+</body>
+</html>
