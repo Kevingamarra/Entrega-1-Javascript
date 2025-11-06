@@ -383,37 +383,90 @@
   <!-- Swiper JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- App -->
-<script defer src="assets/js/app.js"></script>
+    <!-- App -->
+  <script defer src="assets/js/app.js"></script>
 
-<script>
-(function(){
-  var isMobile = (window.matchMedia && (
-    matchMedia('(max-width: 575.98px)').matches ||
-    matchMedia('(hover: none) and (pointer: coarse)').matches
-  ));
-  if (!isMobile) return;
+  <!-- Helper autoplay mobile para el video del hero -->
+  <script>
+  (function(){
+    var isMobile = (window.matchMedia && (
+      matchMedia('(max-width: 575.98px)').matches ||
+      matchMedia('(hover: none) and (pointer: coarse)').matches
+    ));
+    if (!isMobile) return;
 
-  var v = document.querySelector('.hero-video video');
-  if (!v) return;
+    var v = document.querySelector('.hero-video video');
+    if (!v) return;
 
-  v.muted = true; v.setAttribute('muted','');
-  v.autoplay = true; v.setAttribute('autoplay','');
-  v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+    v.muted = true; v.setAttribute('muted','');
+    v.autoplay = true; v.setAttribute('autoplay','');
+    v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
 
-  var tryPlay = function(){ v.play().catch(function(){}); };
+    var tryPlay = function(){ v.play().catch(function(){}); };
 
-  if (v.readyState >= 2) { tryPlay(); }
-  else { v.addEventListener('loadeddata', tryPlay, { once:true }); }
+    if (v.readyState >= 2) { tryPlay(); }
+    else { v.addEventListener('loadeddata', tryPlay, { once:true }); }
 
-  var unlock = function(){ tryPlay(); cleanup(); };
-  var cleanup = function(){
-    window.removeEventListener('touchstart', unlock, { passive:true });
-    window.removeEventListener('click', unlock);
-  };
-  window.addEventListener('touchstart', unlock, { once:true, passive:true });
-  window.addEventListener('click', unlock, { once:true });
-})();
-</script>
+    var unlock = function(){ tryPlay(); cleanup(); };
+    var cleanup = function(){
+      window.removeEventListener('touchstart', unlock, { passive:true });
+      window.removeEventListener('click', unlock);
+    };
+    window.addEventListener('touchstart', unlock, { once:true, passive:true });
+    window.addEventListener('click', unlock, { once:true });
+  })();
+  </script>
+
+  <!-- Modal de bienvenida  -->
+  <div class="modal fade welcome-modal" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/img/logo.png" alt="Pura Belleza" height="40" style="border-radius:8px;">
+            <h2 class="h5 mb-0" id="welcomeTitle">💄 ¡Bienvenida/o a Pura Belleza!</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body pt-2">
+          <p class="mb-3 text-muted">
+            Un universo de cosmética, fragancias y bienestar te espera. 💋<br>
+            Descubrí productos que realzan tu belleza natural y te hacen brillar cada día.
+          </p>
+
+          <label for="welcomeName" class="form-label small fw-semibold">Tu nombre</label>
+          <input id="welcomeName" class="form-control" placeholder="Ej: Sofía" aria-describedby="welcomeHelp" required>
+          <div id="welcomeHelp" class="form-text">Lo usamos para personalizar tu experiencia.</div>
+        </div>
+
+        <div class="modal-footer border-0 pt-0">
+          <button id="welcomeStart" type="button" class="btn btn-brand w-100">Empezar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inicialización del modal -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var modalEl = document.getElementById('welcomeModal');
+    if (!modalEl || typeof bootstrap === 'undefined') return;
+
+    // Mostrar una vez por sesión
+    var yaMostrado = sessionStorage.getItem('pb_welcome_seen');
+    var modal = new bootstrap.Modal(modalEl, { backdrop: 'static', keyboard: false });
+    if (!yaMostrado) modal.show();
+
+    document.getElementById('welcomeStart')?.addEventListener('click', function(){
+      var input = document.getElementById('welcomeName');
+      var nombre = (input?.value || '').trim();
+      if (!nombre) { input?.focus(); input?.classList.add('is-invalid'); return; }
+      console.log("Cliente:", nombre);
+      sessionStorage.setItem('pb_welcome_seen', '1');
+      modal.hide();
+    });
+  });
+  </script>
 </body>
 </html>

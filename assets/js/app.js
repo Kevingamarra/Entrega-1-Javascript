@@ -432,12 +432,41 @@ document.getElementById('btnClearCart')?.addEventListener('click', ()=>{ cart=[]
 
 /* ---- INTERACCIÓN DE BIENVENIDA ---- */
 let nombreUsuario = "";
-while (!nombreUsuario) {
-  nombreUsuario = prompt("¡Bienvenido a Pura Belleza! 💎\nUn universo de cosmética, fragancias y bienestar te espera.\nElegí brillar con productos que inspiran confianza y elegancia.\n\nPor favor, ingresá tu nombre para comenzar:");
-  if (!nombreUsuario) alert("Por favor, escribí tu nombre para continuar ✨");
-}
-alert(`Gracias por visitarnos, ${nombreUsuario}. ¡Explorá nuestros productos y encontrá tu próxima fragancia favorita!`);
-console.log("Cliente:", nombreUsuario);
+(function initWelcomeModal(){
+  const modalEl   = document.getElementById('welcomeModal');
+  const startBtn  = document.getElementById('welcomeStart');
+  const nameInput = document.getElementById('welcomeName');
+
+  if (!modalEl || !window.bootstrap) {
+    while (!nombreUsuario) {
+      nombreUsuario = prompt(
+        "¡Bienvenidos a Pura Belleza! 💄💋\nUn universo de cosmética, fragancias y bienestar te espera.\n\nPor favor, ingresá tu nombre para comenzar:"
+      ) || "";
+      if (!nombreUsuario) alert("Por favor, escribí tu nombre para continuar ✨");
+    }
+    alert(`Gracias por visitarnos, ${nombreUsuario}. ¡Explorá nuestros productos y encontrá tu próxima fragancia favorita!`);
+    console.log("Cliente:", nombreUsuario);
+    return;
+  }
+
+  const modal = new bootstrap.Modal(modalEl, { backdrop:'static', keyboard:false });
+  if (!sessionStorage.getItem('pb_welcome_done')) modal.show();
+
+  const aceptar = () => {
+    const n = (nameInput.value || "").trim();
+    if (!n){ nameInput.classList.add('is-invalid'); nameInput.focus(); return; }
+    nameInput.classList.remove('is-invalid');
+    nombreUsuario = n;
+    console.log("Cliente:", nombreUsuario);
+    sessionStorage.setItem('pb_welcome_done','1');
+    modal.hide();
+    alert(`Gracias por visitarnos, ${nombreUsuario}. ¡Explorá nuestros productos y encontrá tu próxima fragancia favorita!`);
+  };
+
+  startBtn?.addEventListener('click', aceptar);
+  nameInput?.addEventListener('keydown', e => { if (e.key==='Enter'){ e.preventDefault(); aceptar(); } });
+  modalEl.addEventListener('shown.bs.modal', ()=> nameInput?.focus());
+})();
 
 // Pequeña demo de ciclo do...while
 let demoCount = 0;
@@ -481,6 +510,39 @@ function addToCart(prod) {
   updateCart();
 }
 
+/* ---- UI helper: crea filas Subtotal/Descuento si no existen ---- */
+function ensureCartSummaryRows(){
+  const list = document.getElementById('cartItems');
+  if (!list) return {};
+
+  // El body del offcanvas es el padre del <ul id="cartItems">
+  const body = list.parentElement;
+
+  const upsert = (rowId, label, valueId) => {
+    let row = document.getElementById(rowId);
+    if (!row) {
+      row = document.createElement('div');
+      row.id = rowId;
+      row.className = 'mt-2 d-flex justify-content-between small text-muted';
+      row.innerHTML = `<span>${label}</span><span id="${valueId}">$ 0</span>`;
+
+      // Insertar antes de la fila "Total" existente
+      const totalRow = document.getElementById('cartTotal')?.parentElement;
+      if (totalRow) body.insertBefore(row, totalRow);
+      else body.appendChild(row);
+    }
+  };
+
+  upsert('cartSubtotalRow', 'Subtotal:', 'cartSubtotal');
+  upsert('cartDiscountRow', 'Descuento:', 'cartDiscount');
+
+  return {
+    subtotalEl: document.getElementById('cartSubtotal'),
+    discountEl: document.getElementById('cartDiscount'),
+    discountRow: document.getElementById('cartDiscountRow'),
+  };
+}
+
 /* ---- ACTUALIZAR CARRITO ---- */
 function updateCart() {
   const list  = document.getElementById('cartItems');
@@ -488,6 +550,9 @@ function updateCart() {
   const floatCount = document.getElementById('floatingCartCount');
   const total = document.getElementById('cartTotal');
   if (!list) return;
+
+  // Asegurar filas de Subtotal / Descuento en el offcanvas
+  const summary = ensureCartSummaryRows();
 
   list.innerHTML = "";
   let subtotal = 0;
@@ -511,7 +576,6 @@ function updateCart() {
   if (subtotal >= UMBRAL_MAYOR) {
     descuento = subtotal * tasaDesc10;
     totalFinal = subtotal - descuento;
-    alert("🎉 ¡Felicitaciones! Obtuviste un 10% de descuento por superar $30.000.");
     console.log("Descuento 10% aplicado");
   } else if (subtotal >= UMBRAL_MENOR) {
     descuento = subtotal * tasaDesc5;
@@ -521,9 +585,15 @@ function updateCart() {
     console.log("Sin descuento aplicado.");
   }
 
+  // Pintar Subtotal / Descuento / Total
+  if (summary.subtotalEl) summary.subtotalEl.textContent = "$ " + subtotal.toLocaleString('es-AR');
+  if (summary.discountEl) summary.discountEl.textContent = (descuento > 0 ? "- $ " : "$ ") + descuento.toLocaleString('es-AR');
+  if (summary.discountRow) summary.discountRow.classList.toggle('d-none', descuento <= 0);
+
   if (total) total.textContent = "$ " + totalFinal.toLocaleString('es-AR');
 }
 
+/* ---- Delegación click: Agregar al carrito ---- */
 document.addEventListener('click', (e)=>{
   const addBtn = e.target && e.target.closest ? e.target.closest('[data-add]') : null;
   if (addBtn) {
@@ -534,12 +604,39 @@ document.addEventListener('click', (e)=>{
   }
 });
 
+/* ---- Vaciar carrito ---- */
 document.getElementById('btnClearCart')?.addEventListener('click', ()=>{
   cart = [];
   updateCart();
   alert("🗑️ Carrito vaciado correctamente");
 });
 
+/* ---- Al abrir el carrito: mostrar alerta de descuento si corresponde ---- */
+let _discountAlertShown = false;
+
+(function initCartOpenAlert(){
+  const offcanvasEl = document.getElementById('carrito');
+  if (!offcanvasEl) return;
+
+  // cuando se abre el offcanvas
+  offcanvasEl.addEventListener('show.bs.offcanvas', () => {
+    const subtotal = cart.reduce((s, item) => s + (item.price * item.qty), 0);
+    let porcentaje = 0;
+
+    if (subtotal >= UMBRAL_MAYOR) porcentaje = 10;
+    else if (subtotal >= UMBRAL_MENOR) porcentaje = 5;
+
+    if (porcentaje > 0 && !_discountAlertShown) {
+      alert(`🎉 ¡Felicitaciones! Obtuviste un ${porcentaje}% de descuento en tu compra.`);
+      _discountAlertShown = true;
+    }
+  });
+
+  // al cerrar el offcanvas, se permite volver a mostrar la alerta en la próxima apertura
+  offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+    _discountAlertShown = false;
+  });
+})();
 
 
 

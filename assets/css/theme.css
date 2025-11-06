@@ -549,3 +549,19 @@ h2, .h2, .section-title {
   align-items: center;
   justify-content: center;
 }
+
+/* Fondo glam suave sin imagen */
+.welcome-modal::before{
+  content:"";
+  position:fixed; inset:0;
+  background:linear-gradient(135deg, rgba(254,208,227,.85), rgba(255,255,255,.92));
+  backdrop-filter:blur(8px);
+  z-index:-1;
+}
+.welcome-modal .modal-content{border-radius:20px}
+.welcome-modal .modal-header{padding:1rem 1rem .25rem}
+.welcome-modal .modal-body{padding:1rem}
+.welcome-modal .modal-footer{padding:0 1rem 1rem}
+.welcome-modal .form-control.is-invalid{
+  border-color:#d71d5c;box-shadow:0 0 0 .2rem rgba(215,29,92,.15)
+}
