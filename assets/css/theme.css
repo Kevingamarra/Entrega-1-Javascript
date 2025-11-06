@@ -569,4 +569,13 @@ h2, .h2, .section-title {
 .welcome-modal .modal-dialog { max-width: 560px; }
 .welcome-modal .modal-content { border-radius: 20px; }
 .welcome-modal .modal-body p { line-height: 1.55; }
+#welcomeTitle {
+  text-align: center;
+  font-weight: 600;
+  color: #bc3662;
+  font-family: 'Montserrat', sans-serif;
+}
 
+#welcomeTitle strong {
+  color: #d71d5c;
+}
