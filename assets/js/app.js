@@ -782,3 +782,34 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderCarouselSimple('row-maquillaje', productosMaquillaje);
   renderCarouselSimple('row-regalos',    productosRegalos);
 });
+
+/* ---- MODAL DE BIENVENIDA AUTOMÁTICO ---- */
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = new bootstrap.Modal(document.getElementById("welcomeModal"));
+  const btnStart = document.getElementById("welcomeStart");
+  const nameInput = document.getElementById("welcomeName");
+
+  // Si el usuario no tiene nombre guardado, mostrar el modal
+  if (!localStorage.getItem("nombreUsuario")) {
+    setTimeout(() => modal.show(), 1000); // aparece 1 segundo después de cargar
+  }
+
+  // Al hacer clic en "Empezar"
+  btnStart.addEventListener("click", () => {
+    const nombre = nameInput.value.trim();
+
+    if (nombre.length === 0) {
+      alert("Por favor, ingresá tu nombre 💕");
+      return;
+    }
+
+    // Guardamos el nombre para futuras visitas
+    localStorage.setItem("nombreUsuario", nombre);
+
+    // Mensaje personalizado
+    alert(`Gracias por visitarnos, ${nombre}. 🌸 ¡Explorá nuestros productos y dejate inspirar!`);
+
+    // Cerramos el modal
+    modal.hide();
+  });
+});

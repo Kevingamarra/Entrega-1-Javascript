@@ -408,7 +408,7 @@ header.navbar .container{
   }
 }
 
-/* Mobile: recuperar títulos de secciones principales (ignorar WOW) */
+/* Mobile: recuperar títulos de secciones principales */
 @media (max-width: 575.98px){
   #perfumeria  h2.section-title,
   #cuidados    h2.section-title,
@@ -418,4 +418,52 @@ header.navbar .container{
     opacity: 1 !important;
     animation: none !important;
   }
+}
+
+/* Fondo glam para el modal de bienvenida */
+.welcome-modal .modal-content {
+  background: url('../img/bg-bienvenida.jpg') center/cover no-repeat;
+  color: #4a004e;
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Capa rosa semitransparente para mejor legibilidad */
+.welcome-modal .modal-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 230, 238, 0.6);
+  z-index: 1;
+  backdrop-filter: blur(3px);
+}
+
+/* Para asegurar que el contenido se vea sobre el fondo */
+.welcome-modal .modal-header,
+.welcome-modal .modal-body,
+.welcome-modal .modal-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tono de marca */
+.welcome-modal .text-brand {
+  color: #bc3662;
+}
+
+/* Botón glam */
+.welcome-modal .btn-brand {
+  background-color: #d71d5c;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.welcome-modal .btn-brand:hover {
+  background-color: #bc3662;
+  transform: scale(1.03);
 }
