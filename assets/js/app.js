@@ -4,12 +4,12 @@
 // ---- FRESCOR ----
 const productosFrescor = [
   { id:'pf1',  name:'Pitangá Frescor',   price:13999, img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-1.jpg',  category:'perfumeria', subcat:'Frescor', aromas:['Cítrico','Verde','Fresco'] },
-  { id:'pf21', name:'Frescor Ishpink',   price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-21.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Floral','Especiado suave','Herbal'] },
-  { id:'pf22', name:'Frescor Açaí',      price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-22.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Frutal','Dulce','Exótico'] },
-  { id:'pf23', name:'Frescor Castaña',   price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-23.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Dulce','Cremoso','Avainillado','Frutal seco'] },
-  { id:'pf24', name:'Frescor Cacau',     price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-24.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Cacao','Dulce','Gourmand','Amaderado suave'] },
-  { id:'pf25', name:'Frescor Maracuyá',  price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-25.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Frutal','Cítrico','Tropical'] },
-  { id:'pf26', name:'Frescor Estoraque', price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-26.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Ambarado','Especiado','Resinoso','Balsámico'] },
+  { id:'pf21', name:'Frescor Ishpink',   price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-21.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Floral','Especiado suave','Herbal'] },
+  { id:'pf22', name:'Frescor Açaí',      price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-22.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Frutal','Dulce','Exótico'] },
+  { id:'pf23', name:'Frescor Castaña',   price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-23.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Dulce','Cremoso','Avainillado','Frutal seco'] },
+  { id:'pf24', name:'Frescor Cacau',     price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-24.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Cacao','Dulce','Gourmand','Amaderado suave'] },
+  { id:'pf25', name:'Frescor Maracuyá',  price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-25.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Frutal','Cítrico','Tropical'] },
+  { id:'pf26', name:'Frescor Estoraque', price:23000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-26.jpg', category:'perfumeria', subcat:'Frescor', aromas:['Ambarado','Especiado','Resinoso','Balsámico'] },
 ];
 
 // ---- KRISKA ----
@@ -34,9 +34,9 @@ const productosLuna = [
   { id:'lu1',  name:'Luna Radiante',  price:13999, img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-15.jpg', category:'perfumeria', subcat:'Luna', aromas:['Floral','Frutal'] },
   { id:'lu2',  name:'Luna Actitud',   price:14499, img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-16.jpg', category:'perfumeria', subcat:'Luna', aromas:['Amaderado','Floral'] },
   { id:'lu3',  name:'Luna Intenso',   price:14999, img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-17.jpg', category:'perfumeria', subcat:'Luna', aromas:['Oriental','Intenso'] },
-  { id:'pf18', name:'Luna Ilumina',   price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-18.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre','Floral','Frutal','Especiado suave','Almizclado'] },
-  { id:'pf19', name:'Luna Coragem',   price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-19.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre','Floral','Especiado','Amaderado','Ámbar'] },
-  { id:'pf20', name:'Luna Absoluta',  price:0,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-20.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre Floral','Frutal rojo','Floral','Amaderado','Almizclado','Dulce'] },
+  { id:'pf18', name:'Luna Ilumina',   price:45000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-18.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre','Floral','Frutal','Especiado suave','Almizclado'] },
+  { id:'pf19', name:'Luna Coragem',   price:50000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-19.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre','Floral','Especiado','Amaderado','Ámbar'] },
+  { id:'pf20', name:'Luna Absoluta',  price:47000,     img:'assets/img/productos/perfumeria/femenina/perfumeria-femenina-20.jpg', category:'perfumeria', subcat:'Luna', aromas:['Chipre Floral','Frutal rojo','Floral','Amaderado','Almizclado','Dulce'] },
 ];
 
 /* ---- MASCULINO ---- */
@@ -46,10 +46,10 @@ const productosKaiak = [
   { id:'pm6',  name:'Kaiak Urbe',     price:15999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-6.jpg',  category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Amaderado'] },
   { id:'pm7',  name:'Kaiak Aventura', price:15999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-7.jpg',  category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Fresco'] },
   { id:'pm8',  name:'Kaiak Oceano',   price:16999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-8.jpg',  category:'perfumeria', subcat:'Kaiak', aromas:['Acuático','Aromático'] },
-  { id:'pm13', name:'Kaiak Noite',    price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-13.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Especiado','Amaderado'] },
-  { id:'pm14', name:'Kaiak Pulso',    price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-14.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Cítrico','Aromático','Amaderado'] },
-  { id:'pm15', name:'Kaiak Sonar',    price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-15.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Acuático','Aromático','Amaderado'] },
-  { id:'pm16', name:'Kaiak Clásico',  price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-16.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Acuático','Fougère'] },
+  { id:'pm13', name:'Kaiak Noite',    price:50000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-13.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Especiado','Amaderado'] },
+  { id:'pm14', name:'Kaiak Pulso',    price:34000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-14.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Cítrico','Aromático','Amaderado'] },
+  { id:'pm15', name:'Kaiak Sonar',    price:36000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-15.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Acuático','Aromático','Amaderado'] },
+  { id:'pm16', name:'Kaiak Clásico',  price:27000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-16.jpg', category:'perfumeria', subcat:'Kaiak', aromas:['Aromático','Acuático','Fougère'] },
 ];
 
 // ---- ESSENCIAL ----
@@ -58,9 +58,9 @@ const productosEssencial = [
   { id:'pe2',  name:'Essencial Supreme Masculino',  price:23999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-9.jpg',  category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Ámbar','Especiado'] }, 
   { id:'pe4',  name:'Essencial Oud Masculino',      price:24999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-10.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Especiado','Oud'] }, 
   { id:'pe5',  name:'Essencial Exclusivo Masculino',price:22999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-11.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Cítrico','Amaderado'] },
-  { id:'pe17', name:'Essencial Único',              price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-17.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Especiado','Ámbar'] }, 
-  { id:'pe18', name:'Essencial Oud Pimienta',       price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-18.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Especiado','Oud','Frutal'] }, 
-  { id:'pe19', name:'Essencial Elixir',             price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-19.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Cuero','Vainilla','Ámbar'] }, 
+  { id:'pe17', name:'Essencial Único',              price:54000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-17.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Especiado','Ámbar'] }, 
+  { id:'pe18', name:'Essencial Oud Pimienta',       price:52000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-18.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Especiado','Oud','Frutal'] }, 
+  { id:'pe19', name:'Essencial Elixir',             price:50000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-19.jpg', category:'perfumeria', subcat:'Essencial', aromas:['Amaderado','Cuero','Vainilla','Ámbar'] }, 
 ];
 
 // ---- HOMEM ----
@@ -69,10 +69,10 @@ const productosHomem = [
   { id:'hm1',  name:'Homem Neo',      price:25999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-12.jpg', category:'perfumeria', subcat:'Homem', aromas:['Oriental','Amaderado'] },
   { id:'hm2',  name:'Homem Coragio',  price:23999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-4.jpg',  category:'perfumeria', subcat:'Homem', aromas:['Cítrico','Amaderado'] },
   { id:'hm3',  name:'Homem Essence',  price:24999, img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-5.jpg',  category:'perfumeria', subcat:'Homem', aromas:['Ámbar','Especiado'] },
-  { id:'hm20', name:'Homem Elo',      price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-20.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Aromático','Especiado'] }, 
-  { id:'hm21', name:'Homem Tato',     price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-21.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Especiado','Cuero','Ámbar'] }, 
-  { id:'hm22', name:'Homem Clásico',  price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-22.jpg', category:'perfumeria', subcat:'Homem', aromas:['Aromático','Fougère','Amaderado'] }, 
-  { id:'hm23', name:'Homem Nos',      price:0,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-23.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Ámbar','Especiado'] }, 
+  { id:'hm20', name:'Homem Elo',      price:47000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-20.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Aromático','Especiado'] }, 
+  { id:'hm21', name:'Homem Tato',     price:45000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-21.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Especiado','Cuero','Ámbar'] }, 
+  { id:'hm22', name:'Homem Clásico',  price:40000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-22.jpg', category:'perfumeria', subcat:'Homem', aromas:['Aromático','Fougère','Amaderado'] }, 
+  { id:'hm23', name:'Homem Nos',      price:39000,     img:'assets/img/productos/perfumeria/masculina/perfumeria-masculina-23.jpg', category:'perfumeria', subcat:'Homem', aromas:['Amaderado','Ámbar','Especiado'] }, 
 ];
 
 // ---- UNIÓN MASCULINA (Kaiak + Essencial + Homem) ----
