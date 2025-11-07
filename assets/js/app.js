@@ -783,33 +783,51 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderCarouselSimple('row-regalos',    productosRegalos);
 });
 
-/* ---- MODAL DE BIENVENIDA AUTOMÁTICO ---- */
+
+/* ---- MODAL DE BIENVENIDA + TOAST (sin alerts bloqueantes) ---- */
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = new bootstrap.Modal(document.getElementById("welcomeModal"));
-  const btnStart = document.getElementById("welcomeStart");
+  const modalEl   = document.getElementById("welcomeModal");
+  const btnStart  = document.getElementById("welcomeStart");
   const nameInput = document.getElementById("welcomeName");
 
-  // Si el usuario no tiene nombre guardado, mostrar el modal
+  if (!modalEl || !btnStart || !nameInput || typeof bootstrap === "undefined") return;
+
+  // Modal Bootstrap
+  const modal = new bootstrap.Modal(modalEl, { backdrop: "static", keyboard: false });
+
+  // Mostrar el modal sólo si no hay nombre guardado
   if (!localStorage.getItem("nombreUsuario")) {
-    setTimeout(() => modal.show(), 1000); // aparece 1 segundo después de cargar
+    setTimeout(() => modal.show(), 800);
   }
 
-  // Al hacer clic en "Empezar"
-  btnStart.addEventListener("click", () => {
-    const nombre = nameInput.value.trim();
+  // Quitar estado inválido al tipear
+  nameInput.addEventListener("input", () => nameInput.classList.remove("is-invalid"));
 
-    if (nombre.length === 0) {
-      alert("Por favor, ingresá tu nombre 💕");
+  // Click en "Empezar"
+  btnStart.addEventListener("click", () => {
+    const nombre = (nameInput.value || "").trim();
+
+    if (!nombre) {
+      nameInput.classList.add("is-invalid");
+      nameInput.focus();
       return;
     }
 
-    // Guardamos el nombre para futuras visitas
+    // Guardar nombre
     localStorage.setItem("nombreUsuario", nombre);
 
-    // Mensaje personalizado
-    alert(`Gracias por visitarnos, ${nombre}. 🌸 ¡Explorá nuestros productos y dejate inspirar!`);
-
-    // Cerramos el modal
+    // Cerrar modal
     modal.hide();
+
+    // ---- TOAST de bienvenida ----
+    const toastEl  = document.getElementById("welcomeToast");
+    const toastMsg = document.getElementById("welcomeToastMsg");
+    if (toastEl) {
+      if (toastMsg) {
+        toastMsg.textContent = `Gracias por visitarnos, ${nombre}. ¡Explorá nuestros productos y encontrá tu próxima fragancia favorita!`;
+      }
+      const toast = bootstrap.Toast.getOrCreateInstance(toastEl, { delay: 3500 });
+      toast.show();
+    }
   });
 });
